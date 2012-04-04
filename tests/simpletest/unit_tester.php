@@ -69,7 +69,7 @@ class UnitTestCase extends SimpleTestCase {
      *    @param string $message   Message to display.
      *    @return boolean                        True on pass
      *    @access public
-     */
+      */
     function assertNull($value, $message = '%s') {
         $dumper = new SimpleDumper();
         $message = sprintf(
