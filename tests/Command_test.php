@@ -11,16 +11,16 @@ class CommandTesting extends UnitTestCase {
     }
     
     function testCommandObjInicializationWithNoParameters(){
+        $this->expectException();
         $command = new Command();
-        $this->assertIsA($command, 'Command');        
     }
     
     function testCommandObjInicializationWithBlankParameters(){
         $kvString = '';
         $file = '';
-        $location = '';
+        $location = '';        
+        $this->expectException();
         $command = new Command($kvString, $file, $location);
-        $this->assertIsA($command, 'Command');        
     }
     
     function testCommandObjInicializationWithValidParameters(){
