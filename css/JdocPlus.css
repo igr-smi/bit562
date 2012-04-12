@@ -1,0 +1,88 @@
+/* 
+    Document   : JdocPlus.css
+    Created on : Apr 9, 2012, 11:37:26 PM
+    Author     : Michael Olmstead
+    Description:
+        JdocPlus stylesheet.
+*/
+
+	body {
+        margin-left: 20px;
+		min-width:1000px;
+		position: relative;
+		z-index:1;
+	}
+    .headerJdocPlus {
+		padding: 0 0 0 20px;
+		width: 990px;
+		height: 50px;
+        color: white;
+        background-color: brown;
+		position: relative;
+    }
+	#headerName {
+		font-size: 30pt;
+		cursor: pointer;
+	}
+	#expandButton {
+		position: absolute;
+		right: 40px;
+		top: 12px;
+	}
+    .body {
+        margin-left: 20px;
+    }
+    .class .body {
+        position: relative;
+    }
+    .codeline {
+        color: blue;
+    }
+    .bigcode {
+        font-size: 36pt;
+		font-weight: bold;
+    }
+    .expandCommand {
+		width: 40px;
+		text-align: center;
+		background-color: white;
+        font-size: 16pt;
+		font-weight: bold;
+		cursor: pointer;
+    }
+	.cmdName {
+		width: 210px;
+        font-size: 16pt;
+		font-weight: bold;
+        color: red;
+	}
+	.join {
+		width: 40px;
+        font-size: 16pt;
+		font-weight: bold;
+		text-align: left;
+	}
+	.cmdLongName {
+		width: 700px;
+        font-size: 16pt;
+		font-weight: bold;
+		text-decoration: underline;
+        color: magenta;
+	}
+	.emptyCol {
+		width: 40px;
+		text-align: left;
+	}
+	.cmdKey {
+		width: 210px;
+        font-size: 14pt;
+		font-weight: bold;
+        color: green;
+	}
+	.cmdKeyValue {
+		width: 600px;
+        font-size: 14pt;
+		font-weight: normal;
+        color: black;
+	}
+	

@@ -3,23 +3,20 @@
 /**********************************************************
  *  Post for this data pipe with:
  *     {
-            "pipe" : "users",
+            "pipe" : "commands",
  *          "queryType" : "select",
- *          "tableName" : "users",
- *          "email" : "%"
+ *          "tableName" : "commands",
+ *          "object_ID" : "%"
  *      }
  **********************************************************/
-class UsersDataPipe extends baseDataPipe {
-
-    protected $user;
+class CommandsDataPipe extends baseDataPipe {
 
     function __construct($tableMapManager, $dataManager) {
-        parent::__construct($tableMapManager, $dataManager);
-        $this->user = $_REQUEST['email'];       
+        parent::__construct($tableMapManager, $dataManager);        
     }
 
     function where() {
-        return "WHERE email LIKE '".$this->user."'";
+        return "WHERE object_ID LIKE '".$this->object_ID."'";
     }
 
 }

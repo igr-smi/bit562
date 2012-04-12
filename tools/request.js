@@ -8,7 +8,7 @@ HTTP._factories = [
 	function() {return new ActiveXObject("Msxml2.XMLHTTP");},
 	function() {return new ActiveXObject("Microsoft.XMLHTTP");},
 ];
-
+ 
 // When we find a factory that works, store it here.
 HTTP._factory = null;
 
@@ -135,7 +135,7 @@ HTTP._getResponse = function(request)
 		default:
 			return request.responseText;
 	}
-};
+}
 
 // Short form of a standard synchronous post.
 function post( obj ) {

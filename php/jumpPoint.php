@@ -6,12 +6,14 @@ require_once('tableMapManager.php');
 require_once('tableMap.php');
 require_once('DataPipeFactory.php');
 
-// $_REQUEST['tableName'] = 'projectfiles';
-// $_REQUEST['pipe'] = 'projectfiles';
-// $_REQUEST['project'] = 'BIT561';
-// $_REQUEST['queryType'] = 'select';
-// $_REQUEST['authoroid'] = 'xxxxx-xxxxx-xxxxx-xxxxx';
-
+//Request for retrieval data
+/*
+ $_REQUEST['tableName'] = '';
+ $_REQUEST['pipe'] = '';
+ $_REQUEST['project'] = '';
+ $_REQUEST['queryType'] = '';
+ $_REQUEST['authoroid'] = 'xxxxx-xxxxx-xxxxx-xxxxx';
+*/
 $db_dsn = "mysql:host={$db_host};dbname={$db_database}";
 
 $databaseManager = new DBManager($db_dsn, $db_username, $db_password);
