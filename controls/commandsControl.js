@@ -33,26 +33,14 @@
     commandnames = $S.getType("commands");
 
     if ( commandnames.length > 0 ) {
-      //$F.fillCategorySelector("commands", "commandselect");
       $F.fillCategorySelector("commands");
     }
-
-
-    // Display the first data value or a clear screen.    
-    if ( commandnames.length > 0 ) {
-      $F.present("commands", commandnames[0]);
-    } else {
-      $F.clearForm("commands");
-    }
-/*
 
   //Display the first data value or a clear screen.
     if ( commandnames.length > 0 ) {
 
       $F.clearForm("commands");
     }
-      
-*/
  
     // Establish the carousel and set its events.
     $C.setC(commandnames);
@@ -60,11 +48,6 @@
     $C.makeEventHandlers("commandscontrol", "commands", $CMD.bailout );
     
     
-    // Put an event on the category selector.
-    $("#commandselect")
-      .change(function(e) {
-        $F.categorySelector(this, "commandselect", "commandnames");
-      });
     
   };
 
@@ -78,25 +61,8 @@
 // Establish the helpful hints for the forms input elements.
 $(document).ready( function() {
   $("fieldset").click( function() {
-
-    var top = 0,
-    topStr = "",
-    message = "",
-    formLocation = {};
-
-  $("fieldset").css("background-color", "#FFFFFF");
-  $(this).css("background-color", "#DCCEA6");
-  formLocation = $(this).position();
-  top = Math.floor(formLocation.top) + 90;
-  topStr = top + "px";
-  $("#helpComments").css("top", topStr);
-  switch ($(this).attr("id")) {
-
-     default:
-      message = "";
-      break;
-  }
-  $("#helpComments").html(message);
+      $("fieldset").css("background-color", "#FFFFFF");
+      $(this).css("background-color", "#DCCEA6");  
   });
 });
 

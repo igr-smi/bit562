@@ -62,21 +62,21 @@ if ($_SESSION['loggedIn'] != true)
 
         <form name="commands" id="commands">
           <fieldset id="object_ID" class="required">
-            <table border="0" cellspacing="9" cellpadding="0">
+            <table border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td class="fields">object_ID:</td>
               </tr>
               <tr>
                 <td>
                   <input type="text" class="formdata object_ID"
-                    size="84" value="" />
+                    size="84" value="" onload="$KV.setUpKVPairs(this)"/>
                 </td>
               </tr>
             </table>
           </fieldset>
             
           <fieldset id="commandName" class="required">
-            <table border="0" cellspacing="9" cellpadding="0">
+            <table border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td class="fields">Command name
                   <span class="asterisk">&nbsp;*</span>
@@ -96,7 +96,7 @@ if ($_SESSION['loggedIn'] != true)
           </fieldset>
           
           <fieldset id="name" class="required">
-            <table border="0" cellspacing="9" cellpadding="0">
+            <table border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td colspan="2" class="fields">Name
                   <span class="asterisk">&nbsp;*</span>
@@ -115,7 +115,7 @@ if ($_SESSION['loggedIn'] != true)
           </fieldset>
             
           <fieldset id="description" class="required">
-            <table border="0" cellspacing="9" cellpadding="0">
+            <table border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td colspan="2" class="fields">Description
                   <span class="asterisk">&nbsp;*</span>
@@ -123,7 +123,7 @@ if ($_SESSION['loggedIn'] != true)
               </tr>
               <tr>
                 <td>
-                  <textarea class="formdata description" rows="9" 
+                  <textarea class="formdata description" rows="5" 
                             cols="63" >
                   </textarea>
                 </td>
@@ -134,6 +134,27 @@ if ($_SESSION['loggedIn'] != true)
             </table>
           </fieldset>        
        </form>
+        
+       <form name="commandKeyShow" id="commandKeyShow">
+           <table border="0" cellspacing="9" cellpadding="0">
+               <tr>
+                   <th>Key</th>
+                   <th>Value</th>
+               </tr>
+               <tr>
+                   <td><table id="commandKey">
+                           
+                           
+                   </table></td>
+                   <td><table id="value">
+                           
+                           
+                   </table></td>                   
+               </tr>
+           </table>
+       </form>
+        
+        
       </div>
     </div>
 
@@ -148,10 +169,21 @@ if ($_SESSION['loggedIn'] != true)
     <script src="../base/validator.js" type="text/javascript"></script>
     <script src="../controls/commandsControl.js"
       type="text/javascript"></script>
+    <script src="../controls/kvControl.js" type="text/javascript"></script>
+
 
     <script>
 
       $CMD.setUpCommands();
+      
+    /* 
+    //request to commandKeys table is made each time 
+    //as object with id=object_ID change
+    $("#object_ID")
+    .change(function(this){
+        $KV.setUpKVPairs(this)
+    });
+    */
 
     </script>
   </body>
