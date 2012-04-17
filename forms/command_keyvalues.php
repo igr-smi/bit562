@@ -39,14 +39,12 @@ if ($_SESSION['loggedIn'] != true)
 
         <h3>Commands Full Definition</h3>
 
-        <hr color="black" width="670px" />
-
-        <select id="selectCommand" class="formdata commandName">
+        <select id="commandselect" class="wideSelect">        
           <option value="No Command Selected">No Command Selected</option>
         </select>
         <br />        
 
-        <form id="commandcontrol" class="dataControl">
+        <form id="commandscontrol" class="dataControl">
           <br />
           <img src="../images/prevArrow.jpg"
             title="Look at the previous file in the dropdown list." />
@@ -70,12 +68,9 @@ if ($_SESSION['loggedIn'] != true)
               </tr>
               <tr>
                 <td>
-                  <input disabled="disabled" class="formdata object_ID"
+                  <input type="text" class="formdata object_ID"
                     size="84" value="" />
                 </td>
-              </tr>
-              <tr>
-                <td class="undertitle"></td>
               </tr>
             </table>
           </fieldset>
@@ -128,8 +123,8 @@ if ($_SESSION['loggedIn'] != true)
               </tr>
               <tr>
                 <td>
-                  <textarea type="text" class="formdata description" rows="9" 
-                            cols="63" value="" >
+                  <textarea class="formdata description" rows="9" 
+                            cols="63" >
                   </textarea>
                 </td>
               </tr>

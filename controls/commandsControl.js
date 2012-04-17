@@ -32,13 +32,11 @@
 
     commandnames = $S.getType("commands");
 
-    // Set up the commandName selector.
-    // Assumes the data objects have a category member.
-    
     if ( commandnames.length > 0 ) {
-      $F.fillCategorySelector("commands", "selectCommand");
-      //$F.fillCategorySelector("commands");
+      //$F.fillCategorySelector("commands", "commandselect");
+      $F.fillCategorySelector("commands");
     }
+
 
     // Display the first data value or a clear screen.    
     if ( commandnames.length > 0 ) {
@@ -46,17 +44,28 @@
     } else {
       $F.clearForm("commands");
     }
-    
+/*
+
+  //Display the first data value or a clear screen.
+    if ( commandnames.length > 0 ) {
+
+      $F.clearForm("commands");
+    }
+      
+*/
+ 
     // Establish the carousel and set its events.
     $C.setC(commandnames);
-    $C.setSelect("selectCommand", $C.getC(), "commands", "commandName");
-    $C.makeEventHandlers("commandcontrol", "commands", $CMD.bailout );
+    $C.setSelect("commandselect", $C.getC(), "commands", "commandName");
+    $C.makeEventHandlers("commandscontrol", "commands", $CMD.bailout );
+    
     
     // Put an event on the category selector.
-    $("#selectCommand")
+    $("#commandselect")
       .change(function(e) {
-        $F.categorySelector(this, "selectCommand", "commandnames");
+        $F.categorySelector(this, "commandselect", "commandnames");
       });
+    
   };
 
   // Do nothing on bailout at the moment.

@@ -1,5 +1,5 @@
 create table commands(
-object_id char(23) primary key,
+object_ID char(23) primary key,
 commandName varchar(25),
 name varchar(50),
 description varchar(1000),
@@ -7,7 +7,7 @@ entryDate timestamp
 );
 
 create table commandKeys(
-object_id char(23) Primary Key,
+object_ID char(23) Primary Key,
 FK_command char(23),
 commandKey varchar(25),
 value varchar(1000),
