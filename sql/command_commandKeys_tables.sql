@@ -38,3 +38,17 @@ VALUES ('bi561-comke-requi-requi','bi561-comms-requi-00001', 'requirement',
 INSERT INTO `commandkeys`(`object_id`,`FK_command`, `commandKey`, `value`) 
 VALUES ('bi561-comke-requi-stkhd','bi561-comms-requi-00001', 'stakeholders', 
 'Include the names of all the stakeholders of the referenced section');
+
+--INSERTS into tablemaps
+
+INSERT INTO `tablemaps`(`map_ID`, `tableName`, `browserFormName`, `dbColumnName`, `queryType`, `dataType`, `seqNum`) 
+VALUES ( 1, 'commandall', 'command', 'commands.commandName', 'select', 'alpha', 1)
+
+INSERT INTO `tablemaps`(`tableName`, `browserFormName`, `dbColumnName`, `queryType`, `dataType`, `seqNum`) 
+VALUES ('commandall', 'description', 'commands.description', 'select', 'alpha', 1)
+
+INSERT INTO `tablemaps`(`tableName`, `browserFormName`, `dbColumnName`, `queryType`, `dataType`, `seqNum`) 
+VALUES ('commandall', 'commandKey', 'commandkeys.commandKey', 'select', 'alpha', 1)
+
+INSERT INTO `tablemaps`(`tableName`, `browserFormName`, `dbColumnName`, `queryType`, `dataType`, `seqNum`) 
+VALUES ('commandall', 'value', 'commandkeys.value', 'select', 'alpha', 1)

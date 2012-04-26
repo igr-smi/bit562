@@ -2,12 +2,12 @@
 
 (function() {
 
-  function COMMANDSCONTROL() {
+  function COMMANDALLCONTROL() {
 
   }
 
-  $CMD = new COMMANDSCONTROL();
-  $CMD.fn = COMMANDSCONTROL.prototype;
+  $CMD = new COMMANDALLCONTROL();
+  $CMD.fn = COMMANDALLCONTROL.prototype;
 
   $CMD.fn.init = function() {
   };
@@ -19,18 +19,20 @@
   $CMD.fn.setUpCommands = function() {
 
     // Put all javascript variable declarations at the top of the function.
-    var commands = {
-      pipe : "commands",
-      tableName : "commands",
-      queryType : "select",
-      object_ID : "%"
+    var commandall = {
+      pipe : "commandall",
+      tableName : "commandall",
+      queryType : "select"
     },
+    
         commandnames = [];
 
     // Load the data into structure, a jagged associative array.
-    post(commands);
+    post(commandall);
+    
+    alert($S.getType('commandall').lenght);
 
-    commandnames = $S.getType("commands");
+    commandnames = $S.getType("commandall");
 
     if ( commandnames.length > 0 ) {
       $F.fillCategorySelector("commands");
@@ -45,8 +47,7 @@
     // Establish the carousel and set its events.
     $C.setC(commandnames);
     $C.setSelect("commandselect", $C.getC(), "commands", "commandName");
-    $C.makeEventHandlers("commandscontrol", "commands", $CMD.bailout );
-    
+    $C.makeEventHandlers("commandscontrol", "commands", $CMD.bailout );    
     
     
   };

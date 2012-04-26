@@ -249,7 +249,17 @@ class BaseDataPipe {
                 if ( stripos($dbCol, ".") === false )
                     $fieldList .= $this->tableName.".".$dbCol.", ";
                 else
-                    $fieldList .= $dbCol.", ";
+                    //Changing of column name in the respond of SELECT statement
+                    //is neccesary for resultToXML function
+                    //to match data from commands and commandkeys table with
+                    //browser forms using tablemaps.
+                    //So instead of "commandName = 'REQUIREMENT'"
+                    //we'll get "commands.commandName = 'REQUIREMENT'"
+                    
+                    $fieldList .= $dbCol." '".$dbCol."'".", ";
+                
+                    //original expression
+                    //$fieldList .= $dbCol.", ";
             }
         }
         if ( strrpos($fieldList, ", " ) ) {
@@ -294,7 +304,9 @@ class BaseDataPipe {
         $offset = 1;
         if ( $this->tableName === "viewers"
             || $this->tableName === "allcomments"
-            || $this->tableName === "alternativeqs" )
+            || $this->tableName === "alternativeqs" 
+            || $this->tableName === "commandall" //entryDate is not requested
+           )
             $offset = 0;
 
         switch ( $this->queryType ) {

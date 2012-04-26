@@ -60,20 +60,7 @@ if ($_SESSION['loggedIn'] != true)
           <input type="hidden" class="formdata dirtyFlag" value="false" />          
         </form>
 
-        <form name="commands" id="commands">
-          <fieldset id="object_ID" class="required">
-            <table border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td class="fields">object_ID:</td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="text" class="formdata object_ID"
-                    size="84" value="" onload="$KV.setUpKVPairs(this)"/>
-                </td>
-              </tr>
-            </table>
-          </fieldset>
+        <form name="commands" id="commandall">          
             
           <fieldset id="commandName" class="required">
             <table border="0" cellspacing="0" cellpadding="0">
@@ -88,32 +75,9 @@ if ($_SESSION['loggedIn'] != true)
                     value="" />
                 </td>
               </tr>
-                <tr>
-                  <td class="undertitle">Name of the Command. (It should 
-                      be capitalized)</td>
-                </tr>
             </table>
           </fieldset>
           
-          <fieldset id="name" class="required">
-            <table border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td colspan="2" class="fields">Name
-                  <span class="asterisk">&nbsp;*</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="text" class="formdata name" size="84"
-                    value="" />
-                </td>
-              </tr>
-                <tr>
-                  <td class="undertitle">Short description of the Command</td>
-                </tr>
-            </table>
-          </fieldset>
-            
           <fieldset id="description" class="required">
             <table border="0" cellspacing="0" cellpadding="0">
               <tr>
@@ -128,11 +92,42 @@ if ($_SESSION['loggedIn'] != true)
                   </textarea>
                 </td>
               </tr>
+                
+            </table>
+          </fieldset>
+            
+          <fieldset id="commandKey" class="required">
+            <table border="0" cellspacing="0" cellpadding="0">
               <tr>
-                <td class="undertitle">Full description of the Command</td>
+                <td colspan="2" class="fields">Key
+                  <span class="asterisk">&nbsp;*</span>
+                </td>
               </tr>
+              <tr>
+                <td>
+                  <input type="text" class="formdata commandKey" size="84"
+                    value="" />                  
+                </td>
+              </tr>              
             </table>
           </fieldset>        
+            
+          <fieldset id="value" class="required">
+            <table border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td colspan="2" class="fields">value
+                  <span class="asterisk">&nbsp;*</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="text" class="formdata value" size="84"
+                    value="" />                  
+                </td>
+              </tr>              
+            </table>
+          </fieldset>
+            
        </form>
         
        <form name="commandKeyShow" id="commandKeyShow">
@@ -142,6 +137,7 @@ if ($_SESSION['loggedIn'] != true)
                    <th>Value</th>
                </tr>
                <tr>
+                   <!--
                    <td><table id="commandKey">
                            
                            
@@ -150,6 +146,7 @@ if ($_SESSION['loggedIn'] != true)
                            
                            
                    </table></td>                   
+                   -->
                </tr>
            </table>
        </form>
@@ -167,24 +164,12 @@ if ($_SESSION['loggedIn'] != true)
     <script src="../base/formhandler.js" type="text/javascript"></script>
     <script src="../base/view.js" type="text/javascript"></script>
     <script src="../base/validator.js" type="text/javascript"></script>
-    <script src="../controls/commandsControl.js"
+    <script src="../controls/commandAllControl.js"
       type="text/javascript"></script>
-    <script src="../controls/kvControl.js" type="text/javascript"></script>
-
-
     <script>
 
-      $CMD.setUpCommands();
-      
-    /* 
-    //request to commandKeys table is made each time 
-    //as object with id=object_ID change
-    $("#object_ID")
-    .change(function(this){
-        $KV.setUpKVPairs(this)
-    });
-    */
-
+      $CMD.setUpCommands();      
+    
     </script>
   </body>
 </html>
